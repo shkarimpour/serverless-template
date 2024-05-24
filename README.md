@@ -22,22 +22,27 @@ npm run dynamodb:install
 npm run start:offline
 ```
 
-### AWS
+## Steps
 
-First, set up your AWS settings and run the following command.
+### 1 - Create user entity
 
-Serverless framework deploy lambda, api gateway, dynamodb and other resources.
+User should have userName, fullName, emailAddress, creation date
 
-```shell
-npm run deploy:prod
+### 2 - Create add user handler
+
+It should accepts username and password and send { data: true } in a successful login.
+
+
+### 3 - Use a third party api to inform the user is logged in
+
+Use a POST request to inform third party system about user is created using this api below:
+
+[](https://664c87b635bbda109880bf18.mockapi.io/third-party-api/auditTrail)
+
+Request schema:
+
+```jsx
+{
+	"username": string
+}
 ```
-
-## TODO
-- [ ] add sample ui(vue/react/angular..)
-- [ ] implements authentication
-- [ ] add unit-test
-- [ ] add functional-test
-
-## Thanks
-
-- https://levelup.gitconnected.com/creating-a-simple-serverless-application-using-typescript-and-aws-part-1-be2188f5ff93

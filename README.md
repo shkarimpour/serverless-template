@@ -30,7 +30,7 @@ User should have userName, fullName, emailAddress, creation date
 
 ### 2 - Create add user handler
 
-It should accepts username and password and send { data: true } in a successful login.
+Create a handler that accepts user params and creates the user in database
 
 
 ### 3 - Use a third party api to inform the user is logged in
